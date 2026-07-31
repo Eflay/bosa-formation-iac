@@ -29,7 +29,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
 
     - name: Publish 
-      run: dotnet publish --configuration prod --output ${{ runner.temp }}/artifact
+      run: dotnet publish --configuration release --output ${{ runner.temp }}/artifact
     - name: Upload the build artifact
       uses: actions/upload-artifact@v4
       with: 
