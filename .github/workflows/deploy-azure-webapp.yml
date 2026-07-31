@@ -3,7 +3,7 @@ name: "Deploy Terraform"
 # Controls when the workflow will run
 on:
   workflow_run:
-    workflows: ["Build-and-Test"]
+    workflows: ["Bosa-Formation-CI"]
     types:
       - completed
 
