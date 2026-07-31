@@ -9,21 +9,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-  steps:
-    # checkout all sources from git
-  - name: Checkout Sources
-    uses: actions/checkout@v4
+    steps:
+      # checkout all sources from git
+    - name: Checkout Sources
+      uses: actions/checkout@v4
 
-  - name: "Setup .NET"
-    uses: "actions/setup-donet@v1"
-    with:
-      dotnet-version: 8.0.x
-  
-  - name: "Restore .NET"
-    run: dotnet restore
-  # build the project
-  - name: "Build"
-    run: dotnet build --no-restore
+    - name: "Setup .NET"
+      uses: "actions/setup-donet@v1"
+      with:
+        dotnet-version: 8.0.x
+    
+    - name: "Restore .NET"
+      run: dotnet restore
+    # build the project
+    - name: "Build"
+      run: dotnet build --no-restore
 
-  - name: "Test" 
-    run: dotnet test --no-build --verbosity normal
+    - name: "Test" 
+      run: dotnet test --no-build --verbosity normal
